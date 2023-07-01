@@ -1,0 +1,170 @@
+main {
+    width: 100%;
+    height: auto;
+    background-color: rgb(252, 252, 252);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 50px 500px;
+    grid-auto-rows: 200px;
+    grid-auto-columns: 1fr;
+    grid-gap: 10px;
+}
+main .section {
+    background-color: white;
+}
+main .item1 {
+    grid-column: 1/-1;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    box-shadow: 0 0 1px 0px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+main .item2 {
+    grid-row: 2/-1;
+    box-shadow: 0 0 2px 0px rgb(156, 158, 3);
+    width: 200px;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+    left: 0;
+    transition: ease 200ms;
+}
+main .item3 {
+    grid-column: 2/-1;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2px 0px rgb(156, 158, 3);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+main .item3 .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+input[type="text"],
+textarea {
+    width: 300px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 2px 0 black;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+input[id="title"] {
+    height: 40px;
+}
+textarea[id="note"] {
+    height: 70px;
+}
+textarea[id="note"]::placeholder {
+    position: relative;
+    top: 25%;
+    margin-left: 10px;
+    font-size: 15px;
+}
+main .item3 .form button {
+    width: 300px;
+    height: 30px;
+    margin: 10px auto;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(253, 190, 15);
+    cursor: pointer;
+    background-image: linear-gradient(
+        to right,
+        rgb(255, 174, 0),
+        rgb(255, 0, 149)
+    );
+    background-position-x: 0px;
+}
+main .item3 .form button:hover {
+    background-position-x: 300px;
+    transition: ease 1s;
+}
+main .item3 .note {
+    margin: 10px;
+    width: 290px;
+    height: 290px;
+    padding: 20px;
+    background-color: rgb(233, 223, 89);
+    color: rgb(14, 13, 13);
+    border-radius: 10px;
+}
+main .item3 .note p {
+    margin: 10px;
+    color: rgb(65, 61, 61);
+}
+main .item4 {
+    grid-column: 1/-1;
+    background-color: rgb(17, 24, 46);
+}
+
+#navbar {
+    width: 90%;
+    height: 40px;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fa.fa-bars {
+    font-weight: bold;
+    font-size: 20px;
+    display: none;
+}
+main .section .sidebar {
+    width: 100%;
+    /* display: flex;
+  justify-content: center; */
+    line-height: 50px;
+}
+main .section .sidebar ul {
+    list-style-type: none;
+    margin: 20px;
+}
+main .section .sidebar ul li {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 5px 0;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}
+main .section .sidebar ul li:hover {
+    background-color: rgb(201, 230, 250);
+    color: rgb(7, 127, 248);
+
+    transition: ease 500ms;
+}
+
+/* for mobile view */
+@media only screen and (max-width: 600px) {
+    .fa.fa-bars {
+        display: inline-block;
+    }
+    main .item2 {
+        position: fixed;
+        top: 60px;
+        height: 500px;
+    }
+    main .hide {
+        left: -100%;
+    }
+
+    main .item3 {
+        position: relative;
+        left: 0;
+        width: 100%;
+        grid-column: 1/-1;
+    }
+}
