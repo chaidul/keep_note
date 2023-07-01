@@ -16,5 +16,5 @@ jobs:
           host: ${{secrets.HOST}}
           user: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
-          localDir: "myapp"
+          localDir: "/home/runner/work/keep_note/keep_note/myapp"
           remoteDir: "public_html"
